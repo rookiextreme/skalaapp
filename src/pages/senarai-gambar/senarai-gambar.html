@@ -1,0 +1,45 @@
+<!--
+  Generated template for the SenaraiGambarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><span class="bar-title" text-wrap>Senarai Gambar <span *ngIf="showNoResult == false">({{images.length}})</span></span></ion-title>
+    <ion-buttons end *ngIf="(dept_id == pejabat_seliatapak || ptm == true) ">
+      <button ion-button icon-only (click)="tambahGambar()">
+        <ion-icon name="add" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="class_title">
+    <ion-card-content>
+      <div>{{maklumatasas.tajuk}}</div>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let image of images">
+        <div class="thumbs" (click)="paparGambar(image)">
+          <div class="inner">
+            <img src="{{ image.thumb_src }}">
+          </div>
+        </div>
+      </ion-col>
+      <ion-col *ngIf="showNoResult == true">
+        Tiada Gambar
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>

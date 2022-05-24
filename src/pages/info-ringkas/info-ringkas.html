@@ -1,0 +1,120 @@
+<!--
+  Generated template for the InfoRingkasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="light"></ion-icon>
+    </button>
+    <ion-title><span class="bar-title" text-wrap>Info Ringkas</span></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background-image: url('assets/imgs/global/blue_bg2.jpg'); background-size: cover;">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <div class="aktif">
+          <ion-item class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_projek_aktif')">
+
+            <h1 class="counts">{{lamanutama_projek_aktif.count}}</h1>
+            <p class="small-text">{{lamanutama_projek_aktif.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatSiapRb == true">
+        <div class="lewatsiaprb">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_siap_rekabentuk')">
+
+            <h1 class="counts">{{lamanutama_lewat_siap_rekabentuk?.count}}</h1>
+            <p class="small-text">{{lamanutama_lewat_siap_rekabentuk?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatIklan == true">
+        <div class="lewatiklan">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_iklan')">
+            <h1 class="counts">{{lamanutama_lewat_iklan?.count}}</h1>
+            <p class="small-text">{{lamanutama_lewat_iklan?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatSSt == true">
+        <div class="lewatsst">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_sst')">
+            <h1 class="counts">{{lamanutama_lewat_sst?.count}}</h1>
+            <p class="small-text">{{lamanutama_lewat_sst?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showKontrakLewat2Bulan == true">
+        <div class="lewat2bulan">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_kontrak_lewat_2_bulan')">
+            <h1 class="counts">{{lamanutama_kontrak_lewat_2_bulan?.count}}</h1>
+            <p class="small-text">{{lamanutama_kontrak_lewat_2_bulan?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatSerahPelanggan == true">
+        <div class="lewatserah">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_serah_pelanggan')">
+
+            <h1 class="counts">{{lamanutama_lewat_serah_pelanggan?.count}}</h1>
+            <p class="small-text">{{lamanutama_lewat_serah_pelanggan?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatTtKontrak == true">
+        <div class="lewatttkontrak">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_tt_kontrak')">
+
+            <h1 class="counts">{{lamanutama_lewat_tt_kontrak?.count}}</h1>
+            <p class="small-text">{{lamanutama_lewat_tt_kontrak?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showKontrakLewatTutupAkaun == true">
+        <div class="lewattutupakaun">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_kontrak_lewat_tutup_akaun')">
+            <h1 class="counts">{{lamanutama_kontrak_lewat_tutup_akaun?.count}}</h1>
+            <p class="small-text">{{lamanutama_kontrak_lewat_tutup_akaun?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showBelumSahDplan == true">
+        <div class="belumsahdplan">
+          <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_belum_sah_dplan')">
+            <h1 class="counts">{{lamanutama_belum_sah_dplan?.count}}</h1>
+            <p class="small-text">{{lamanutama_belum_sah_dplan?.title}}</p>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col col-6 *ngIf="showLewatSiapRbHodt == true">
+        <ion-item text-wrap class="boxes size-blue blue-2" no-lines (click)="goToSenaraiProjek('lamanutama_lewat_siap_rekabentuk_hodt')">
+
+          <h1 class="counts">{{lamanutama_lewat_siap_rekabentuk_hodt?.count}}</h1>
+          <p class="small-text">{{lamanutama_lewat_siap_rekabentuk_hodt?.title}}</p>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="footnote">
+    <ion-card-content>
+      <div style="text-align: center;">Sentuh pada kotak di atas untuk melihat senarai projek atau
+        kontrak berkaitan.</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the CatatanKontrakPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><span class="bar-title" text-wrap>Catatan Kontrak</span></ion-title>
+    <ion-buttons end *ngIf="dept_id == kontrak.pejabat_seliatapak || ptm == true">
+      <button ion-button icon-only (click)="openAddCatatan()">
+        <ion-icon name="md-add-circle" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="class_title">
+    <ion-card-content>
+      <div>{{kontrak.tajuk}}</div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card no-padding style="background: transparent;">
+    <ion-card-content no-padding>
+      <div class="butiran_content">
+        <table>
+          <thead>
+            <tr>
+              <th col-1>No</th>
+              <th col-3>Tarikh</th>
+              <th col-6>Catatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let catatan of catatans; let i = index">
+              <td text-center>{{i+1}}</td>
+              <td text-center>{{catatan.tarikh}}</td>
+              <td>{{catatan.catatan}}</td>
+            </tr>
+            <tr *ngIf="showNoResult == true">
+              <td colspan="3" text-center>Tiada Catatan Kontrak</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-content padding style="background-image: url('assets/imgs/login/bg_login.jpg'); background-size: cover; padding-top: 20px">
+  <img src="assets/imgs/login/login_logo.png" style="margin-bottom: 30px">
+  <ion-card padding>
+    <ion-item>
+      <ion-label stacked color="dark">ID Pengguna</ion-label>
+      <ion-input type="text" [(ngModel)]="noKadPengenalan" placeholder="Masukkan no. kad pengenalan" class="input-style"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="dark">Kata Laluan</ion-label>
+      <ion-input type="password" [(ngModel)]="kataLaluan" placeholder="Masukkan kata laluan" class="input-style"></ion-input>
+    </ion-item>
+
+    <!-- if  problem, display error message -->
+    <ion-item *ngIf="errorMessage != ''">
+      <span ion-text color="danger" text-wrap class="errorMsg">
+        {{errorMessage}}
+      </span>
+    </ion-item>
+
+    <button ion-button (click)="checkLogin()" icon-start block round style="margin-top: 20px; padding: 10px;">
+      <ion-icon name="log-in"></ion-icon>
+      Log Masuk
+    </button>
+  </ion-card>
+</ion-content>

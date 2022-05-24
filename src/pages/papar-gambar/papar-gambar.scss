@@ -1,0 +1,44 @@
+page-papar-gambar {
+  .thumbs {
+    /*height: 80px;
+    width: 100%;*/
+    text-align: center;
+    display: table;
+    height: 300px;
+    width: 95%;
+    background-color: #4f6457;
+    margin: auto;
+  }
+
+  .thumbs img {
+    max-height: 300px;
+    vertical-align: middle;
+  }
+
+  .inner {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+  }
+
+  .desc-bg {
+    background: -moz-linear-gradient(-45deg, rgba(76, 76, 76, 0.6) 0%, rgba(77, 77, 77, 0.6) 1%, rgba(89, 89, 89, 0.64) 12%, rgba(102, 102, 102, 0.69) 25%, rgba(71, 71, 71, 0.75) 39%, rgba(44, 44, 44, 0.8) 50%, rgba(17, 17, 17, 0.76) 61%, rgba(17, 17, 17, 0.68) 80%, rgba(28, 28, 28, 0.64) 91%, rgba(19, 19, 19, 0.6) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(76, 76, 76, 0.6) 0%, rgba(77, 77, 77, 0.6) 1%, rgba(89, 89, 89, 0.64) 12%, rgba(102, 102, 102, 0.69) 25%, rgba(71, 71, 71, 0.75) 39%, rgba(44, 44, 44, 0.8) 50%, rgba(17, 17, 17, 0.76) 61%, rgba(17, 17, 17, 0.68) 80%, rgba(28, 28, 28, 0.64) 91%, rgba(19, 19, 19, 0.6) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(76, 76, 76, 0.6) 0%, rgba(77, 77, 77, 0.6) 1%, rgba(89, 89, 89, 0.64) 12%, rgba(102, 102, 102, 0.69) 25%, rgba(71, 71, 71, 0.75) 39%, rgba(44, 44, 44, 0.8) 50%, rgba(17, 17, 17, 0.76) 61%, rgba(17, 17, 17, 0.68) 80%, rgba(28, 28, 28, 0.64) 91%, rgba(19, 19, 19, 0.6) 100%);
+
+  }
+
+  .desc {
+    color: rgb(212, 212, 212);
+    font-size: 11px;
+  }
+
+  .vertical-align-content>* {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+  }
+}

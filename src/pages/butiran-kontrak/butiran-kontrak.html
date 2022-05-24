@@ -1,0 +1,368 @@
+<!--
+  Generated template for the ButiranKontrakPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="light"></ion-icon>
+    </button>
+    <ion-title><span class="bar-title" text-wrap>Butiran Kontrak</span></ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addToStorage()" *ngIf="kontrak_in_storage.length == 0">
+        <ion-icon name="cloud-download" class="sizeicon" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="openInfoRingkas()">
+        <ion-icon name="apps" class="sizeicon" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="class_title">
+    <div>{{maklumatasas.tajuk}}</div>
+  </ion-card>
+
+  <ion-card>
+    <ion-slides class="thumbs" effect="slide" autoplay="3000" loop="true" speed="500" pager="true" paginationType="bullets"
+      centeredSlides="true" *ngIf="sliders.length > 0">
+      <ion-slide class="inner" *ngFor="let slide of sliders">
+        <!--<img style="height: 200px;" [src]="slide.src">-->
+        <img [src]="slide.src">
+      </ion-slide>
+    </ion-slides>
+
+    <ion-card-content no-padding>
+      <div class="butiran_subheader">Maklumat Asas Kontrak</div>
+      <div class="butiran_content">
+        <div class="label">Nama Kontraktor</div>
+        <div class="content_val setMarginBottom">{{ maklumatasas.nama_kontraktor }}</div>
+        <div class="label">Gred</div>
+        <div class="content_val setMarginBottom">{{ maklumatasas.gred }}</div>
+        <div class="label">Pegawai Penguasa</div>
+        <div class="content_val">{{ maklumatasas.pegawai_penguasa }}</div>
+      </div>
+
+      <div class="butiran_subheader">Pejabat Tanggungjawab</div>
+      <div class="butiran_content">
+        <div class="label">Pejabat HOPT</div>
+        <div class="content_val setMarginBottom">{{pejabat.pejabat_hopt}}</div>
+        <div class="label">Pejabat Seliatapak</div>
+        <div class="content_val setMarginBottom">{{pejabat.pejabat_seliatapak}}</div>
+        <div class="label">Pejabat JKR66</div>
+        <div class="content_val setMarginBottom">{{pejabat.pejabat_jkr66}}</div>
+        <div class="label">Pegawai Peraku</div>
+        <div class="content_val setMarginBottom">{{pejabat.pegawai_peraku}}</div>
+        <div class="label">Pejabat Pegawai Peraku</div>
+        <div class="content_val setMarginBottom">{{pejabat.pejabat_peraku}}</div>
+        <div class="label">Pejabat Bahagian Kewangan</div>
+        <div class="content_val">{{pejabat.pejabat_kewangan}}</div>
+      </div>
+
+      <div class="butiran_subheader">Maklumat Kerja</div>
+      <div class="butiran_content">
+        <ion-grid no-padding>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Milik Tapak</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.tarikh_milik_tapak }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Siap Asal</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.tarikh_siap_asal }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <div class="label">Tarikh Siap Semasa</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.tarikh_siap_semasa }}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="butiran_subheader">Maklumat Kerja Fizikal</div>
+      <div class="butiran_content">
+        <ion-grid no-padding>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">% Kemajuan Kerja</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.peratus_kemajuan_fizikal }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">% Jadual Kerja</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.jadual_kemajuan_fizikal }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <div class="label">Kemajuan Kerja</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kerja.status_kemajuan_fizikal }}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="butiran_subheader">Maklumat Kewangan</div>
+      <div class="butiran_content">
+        <ion-grid no-padding>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Nilai Kerja (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.nilai_kerja_dilaksana_kini }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">
+                <span *ngIf="kewangan.jenis_pembayar == 1">Jumlah Kumulatif Diperakukan (RM)</span>
+                <span *ngIf="kewangan.jenis_pembayar != 1">Jumlah bayaran (RM)</span>
+              </div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.jumlah_bayaran }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">
+                <span *ngIf="kewangan.jenis_pembayar == 1">% Bayaran Diperakukan</span>
+                <span *ngIf="kewangan.jenis_pembayar != 1">% Bayaran</span>
+              </div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.peratus_bayaran }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Harga Kontrak Asal (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.harga_kontrak_asal }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Harga Kontrak Semasa (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.harga_kontrak_semasa }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Bayaran Pendahuluan (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.bayaran_pendahuluan }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Recoupment Bayaran Pendahuluan (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.recoupment_bayaran }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Tamat Semasa JWP</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.tarikh_tamat_jwp }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Tamat Semasa Bon</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.tarikh_tamat_bon }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <div class="label">Peratus WJP Dilepaskan</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ kewangan.peratus_wjp }}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="butiran_subheader">Bayaran Lima(5) Kali Terakhir</div>
+      <div class="butiran_content ">
+        <table class="table_bayaran">
+          <tr>
+            <th colspan="3">JKR66</th>
+            <th colspan="2">Pengesahan Kewangan</th>
+          </tr>
+          <tr>
+            <th class="fasa">Tarikh Bayaran Penilaian</th>
+            <th class="fasa">Amaun Bayaran</th>
+            <th class="fasa">Jenis Bayaran Catatan</th>
+            <th class="fasa">Tarikh Bayaran (EFT)</th>
+            <th class="fasa">Amaun Bayaran</th>
+          </tr>
+          <tbody>
+            <tr *ngFor="let bayaran of bayarans">
+              <td class="tarikh">{{bayaran.tarikh_penilaian}}</td>
+              <td>{{bayaran.bayaran_diakukan}}</td>
+              <td>{{bayaran.jenis_bayaran}}</td>
+              <td class="tarikh">{{bayaran.eft}}</td>
+              <td>{{bayaran.kewangan_peraku}}</td>
+            </tr>
+            <tr *ngIf="bayarans == null">
+              <td colspan="5" text-center>Tiada Bayaran</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="butiran_subheader">Maklumat Siap</div>
+      <div class="butiran_content">
+        <ion-grid no-padding>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Siap Sebenar</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_siap_sebenar }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tempoh Tanggungan Kecacatan</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tempoh_tanggung_cacat }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Patut CMGD</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_patut_cmgd }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Sebenar Sempurna Baiki Kecacatan</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_sebenar_baiki_cacat }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Sebenar Terima Lukisan Siap Bina</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_sebenar_terima_lukisan }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Patut Keluar SOFA</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_patut_sofa }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh SOFA</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_sofa }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Patut Keluar Perakuan JKR66A</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_patut_jkr66a }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Tarikh Perakuan JKR66A</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_peraku_jkr66a }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="setMarginBottom">
+            <ion-col col-6>
+              <div class="label">Harga Kontrak Muktamad (RM)</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.harga_kontrak_muktamad }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6>
+              <div class="label">Tarikh EFT Bayaran Akhir</div>
+            </ion-col>
+            <ion-col col-6 text-right>
+              <div class="content_val">{{ siap.tarikh_eft }}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="white" icon-start (click)="catatan()">
+          <ion-icon name='clipboard'></ion-icon>
+          Catatan
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="white" icon-start (click)="gambar()">
+          <ion-icon name='image'></ion-icon>
+          Media
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

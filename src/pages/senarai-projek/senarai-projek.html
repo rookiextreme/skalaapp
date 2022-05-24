@@ -1,0 +1,83 @@
+<!--
+  Generated template for the InfoRingkasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="primary">
+      <ion-icon name="menu" color="light"></ion-icon>
+    </button>
+    <ion-title><span class="bar-title" text-wrap>Senarai Projek <span *ngIf="total > 0">({{total}})</span></span></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="reload()">
+        <ion-icon name="refresh" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="carian" placeholder="Carian dalam senarai" (keyup.enter)="setCarian()"></ion-input>
+
+          <ion-icon name="md-search" (click)="setCarian()" item-end></ion-icon>
+
+        </ion-item>
+        <button style="background-color: #D9B44A;" ion-button block (click)="setCarian()" *ngIf="carian!==''">Carian</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--<ion-card>
+    <ion-card-content>
+      <div class="class_title">{{class_title}}</div>
+    </ion-card-content>
+  </ion-card>-->
+
+  <ion-card class="card-butiran" *ngFor="let project of projects" (click)="paparButiranProjek(project)">
+    <ion-card-content>
+      <div class="tajuk">{{project.butiran_projek.tajuk}}</div>
+      <span class="small-label">Pelanggan</span><br>
+      <span class="butiran">{{project.butiran_projek.pelanggan}}</span><br>
+      <span class="small-label">Pengurus Projek</span><br>
+      <span class="butiran">{{project.butiran_projek.pengurus_program}}</span><br>
+      <span class="small-label">Kos Projek Semasa</span><br>
+      <span class="butiran">{{project.butiran_projek.kos_semasa}}</span>
+      <div *ngIf="project.butiran_projek.skop_hodt != ''">
+        <span class="small-label">Skop HODT</span><br>
+        <span class="butiran">{{project.butiran_projek.skop_hodt}}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer no-padding>
+  <ion-toolbar no-padding>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-2 no-padding>
+          <button ion-button full icon-only class="bg_transparent" (click)="prev()" [disabled]="prevDisabled">
+            <ion-icon name="arrow-dropleft"></ion-icon>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <div ion-text text-center class="pagination" *ngIf="(totalPage)">
+            {{currentPage}} of {{totalPage}}
+          </div>
+        </ion-col>
+
+        <ion-col col-2 no-padding>
+          <button ion-button full icon-only class="bg_transparent" (click)="next()" [disabled]="nextDisabled">
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

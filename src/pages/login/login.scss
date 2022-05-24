@@ -1,0 +1,28 @@
+page-login {
+  .input-style {
+    font-size: 13px;
+    border-bottom: #71aabbb6 solid 1px;
+  }
+
+  .errorMsg {
+    font-size: 13px;
+  }
+
+  .text-input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-style: italic;
+    opacity: 1;
+    /* Firefox */
+  }
+
+  .text-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-style: italic;
+  }
+
+  .text-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-style: italic;
+  }
+
+}

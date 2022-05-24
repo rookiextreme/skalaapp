@@ -1,0 +1,32 @@
+page-senarai-gambar {
+  .thumbs {
+    /*height: 80px;
+    width: 100%;*/
+    text-align: center;
+    display: table;
+    height: 80px;
+    width: 100%;
+    background: -moz-linear-gradient(-45deg, rgba(217, 180, 74, 0.3) 0%, rgba(217, 180, 74, 0.3) 1%, rgba(222, 224, 102, 0.8) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(217, 180, 74, 0.3) 0%, rgba(217, 180, 74, 0.3) 1%, rgba(222, 224, 102, 0.8) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(217, 180, 74, 0.3) 0%, rgba(217, 180, 74, 0.3) 1%, rgba(222, 224, 102, 0.8) 100%);
+  }
+
+  .thumbs img {
+    max-height: 80px;
+    vertical-align: middle;
+  }
+
+  .inner {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+  }
+
+  ion-content>.scroll-content {
+    margin-bottom: 50px;
+  }
+
+}

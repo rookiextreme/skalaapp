@@ -1,0 +1,152 @@
+page-info-ringkas {
+
+  .small-text {
+    font-size: 14.5px;
+    text-align: left;
+    font-weight: normal;
+    // color: #e9db5c;
+    color: #fcc911;
+    // color: #fffffd;
+
+    //text-shadow: 2px 2px 3px #5C535D;
+    padding-right: 2px;
+  }
+
+  .counts {
+    text-align: left;
+    //font-weight: bolder;
+    color: #d4eee2;
+    text-shadow: 2px 2px 2px #5C535D;
+    padding-right: 2px;
+    font-size: 30px;
+  }
+
+  .boxes {
+    min-height: 110px;
+  }
+
+  .aktif {
+    background-image: url("../assets/imgs/dashboard/projek-aktif-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50% 100%;
+  }
+
+  .lewatsiaprb {
+    background-image: url("../assets/imgs/dashboard/lewat-siap-rb-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewatiklan {
+    background-image: url("../assets/imgs/dashboard/lewat-iklan-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewatsst {
+    background-image: url("../assets/imgs/dashboard/lewat-sst-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewat2bulan {
+    background-image: url("../assets/imgs/dashboard/lewat-2bulan-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewatttkontrak {
+    background-image: url("../assets/imgs/dashboard/lewat-tt-kontrak-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .belumsahdplan {
+    background-image: url("../assets/imgs/dashboard/belum-sah-dplan-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewattutupakaun {
+    background-image: url("../assets/imgs/dashboard/lewat-tutup-akaun-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .lewatserah {
+    background-image: url("../assets/imgs/dashboard/lewat-serah-pelanggan-X.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 60% 100%;
+  }
+
+  .footnote {
+    background: -moz-linear-gradient(top, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    margin-top: 5px;
+    /*border-top: 4px solid #3b679e;*/
+    font-size: 10px;
+    // font-weight: bold;
+    color: #d4eee2;
+    // text-shadow: 2px 2px 2px #5C535D;
+  }
+
+  .size-blue {
+    background-size: 100% 100%;
+  }
+
+  .blue-1 {
+    background: -moz-linear-gradient(-45deg, rgba(117, 177, 169, 0.8) 0%, rgba(217, 180, 74, 0.8) 76%, rgba(222, 224, 102, 0.8) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(117, 177, 169, 0.8) 0%, rgba(217, 180, 74, 0.8) 76%, rgba(222, 224, 102, 0.8) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(117, 177, 169, 0.8) 0%, rgba(217, 180, 74, 0.8) 76%, rgba(222, 224, 102, 0.8) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  }
+
+  .blue-2 {
+    background: -moz-linear-gradient(top, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(101, 62, 242, 1) 0%, rgba(127, 5, 197, 0.86) 34%, rgba(127, 5, 197, 0.8) 49%, rgba(127, 5, 197, 0.72) 69%, rgba(101, 62, 242, 0.6) 99%, rgba(101, 62, 242, 0.6) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  }
+
+  .blue-3 {
+    background-image: url("../assets/imgs/boxes/b3.png");
+  }
+
+  .blue-4 {
+    background-image: url("../assets/imgs/boxes/b4.png");
+  }
+
+
+  .blue-5 {
+    background-image: url("../assets/imgs/boxes/b5.png");
+  }
+
+  .blue-6 {
+    background-image: url("../assets/imgs/boxes/b5.png");
+  }
+
+
+  .blue-7 {
+    background-image: url("../assets/imgs/boxes/b7.png");
+  }
+}
