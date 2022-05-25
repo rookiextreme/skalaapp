@@ -114,7 +114,6 @@ export class LoginPage {
 
     this.http.post(url, postData, httpOptions)
       .subscribe(data => {
-
         let ic_number = data['ic_number'];
         let status = data['status'];
         let dept = data['dept'];
@@ -143,7 +142,7 @@ export class LoginPage {
             this.navCtrl.setRoot(InfoRingkasPage);
             loader.dismiss();
           });
-          /* 
+          /*
           * **1:
           * to make sure storage, store all input, set then() to the last storage.set
           * javascript will process every save (set) in 1 second, but will jump to next process without waiting to complete
